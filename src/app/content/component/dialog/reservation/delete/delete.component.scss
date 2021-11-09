@@ -1,0 +1,15 @@
+.delete-reservation{
+    .title{
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .body{
+        .button{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+}

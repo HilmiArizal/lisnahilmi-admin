@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited{
+//     background-color: #AA857D !important;
+// }
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #AA857D !important;
+    border-color: #AA857D !important;
+}

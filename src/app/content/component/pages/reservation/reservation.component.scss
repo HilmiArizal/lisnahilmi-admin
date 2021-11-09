@@ -1,0 +1,47 @@
+.reservation{
+    .title{
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .body{
+
+        .mat-form-field{
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .mat-elevation-z8{
+            box-shadow: none;
+            border: 0.5px solid rgba(0,0,0,.12);
+            table{
+                width: 100%;
+
+                tr.mat-header-row{
+                    background-color: #AA857D;
+                    th{
+                        font-size: 15px;
+                    }
+                }
+                .icon{
+                    .mat-icon{
+                        cursor: pointer;
+                        color: #AA857D;
+                        transition: 0.3s ease;
+                    }
+                    .mat-icon:hover{
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+        .reservation{
+            margin-top: 20px;
+            .all{
+                font-size: 24px;
+            }
+        }
+    }
+}
