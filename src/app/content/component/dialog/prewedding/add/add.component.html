@@ -9,7 +9,7 @@
   <div class="body">
 
     <div class="form-add">
-      <form>
+      <form [formGroup]="formPrewedding" (ngSubmit)="onConfirmAdd()">
 
         <div class="image-input">
           <div *ngIf="!changeImage; else preview">
@@ -22,7 +22,6 @@
           <ng-template #preview>
             <label class="image">
               <img src="{{previewImage}}" alt="img-input">
-              <!-- <input type="file" (change)="onChangeImage($event)"> -->
               <mat-icon (click)="onBackImage()">refresh</mat-icon>
             </label>
           </ng-template>
@@ -30,14 +29,14 @@
 
         <mat-form-field appearance="standard">
           <mat-label>Order</mat-label>
-          <input type="number" matInput #input min="1" max="8">
+          <input type="number" matInput #input min="1" max="8" formControlName="order">
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Status</mat-label>
-          <mat-select>
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2">Option 2</mat-option>
+          <mat-select formControlName="status">
+            <mat-option value="show">Show</mat-option>
+            <mat-option value="hide">Hide</mat-option>
           </mat-select>
         </mat-form-field>
 

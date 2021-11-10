@@ -6,11 +6,13 @@
   }
 
   .body {
-
+    position: relative;
     .button-add {
+      position: absolute;
+      top: -50px;
+      right: 0;
       height: 50px;
       width: 50px;
-
       button {
         width: 100%;
         height: 100%;

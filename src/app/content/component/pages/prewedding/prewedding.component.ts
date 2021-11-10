@@ -49,15 +49,14 @@ export class PreweddingComponent implements OnInit {
 
   async getPageListPrewedding(e: any) {
     let dataPrewedding: any = new Object();
-    dataPrewedding.search = e.target.value.trim();
-    dataPrewedding.currentPage = 0;
-    dataPrewedding.perPage = 5;
-    // await this.reservationService.getListWish(dataPrewedding).subscribe((res: any) => {
-    //   this.dataSource = res.data;
-    //   this.pagePerPage = res.per_page;
-    //   this.pageCurrentPage = res.current_page;
-    //   this.pageTotalData = res.total_data;
-    // });
+    dataPrewedding.currentPage = e.pageIndex;
+    dataPrewedding.perPage = e.pageSize;
+    await this.preweddingService.getListPrewedding(dataPrewedding).subscribe((res: any) => {
+      this.dataSource = res.data;
+      this.pagePerPage = res.per_page;
+      this.pageCurrentPage = res.current_page;
+      this.pageTotalData = res.total_data;
+    });
   }
 
   managePrewedding(type: string, dataPrewedding: any) {
@@ -73,7 +72,9 @@ export class PreweddingComponent implements OnInit {
         )
         dialogOpenAdd.afterClosed().subscribe((results) => {
           if (results) {
-
+            this.preweddingService.addPrewedding(results).subscribe((res: any) => {
+              this.getListPrewedding();
+            })
           }
         })
         break;
@@ -85,7 +86,9 @@ export class PreweddingComponent implements OnInit {
         )
         dialogOpenEdit.afterClosed().subscribe((results) => {
           if (results) {
-
+            this.preweddingService.editPrewedding(results).subscribe((res: any) => {
+              this.getListPrewedding();
+            })
           }
         })
         break;

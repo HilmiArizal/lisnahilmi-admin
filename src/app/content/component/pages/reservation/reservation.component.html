@@ -38,9 +38,9 @@
         </ng-container>
 
         <ng-container matColumnDef="action">
-          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Action </th>
           <td mat-cell *matCellDef="let element"> 
-            <div class="icon">
+            <div class="icon" style="text-align: center;">
               <mat-icon (click)="onDeleteWish(element)">delete</mat-icon>
             </div>
           </td>

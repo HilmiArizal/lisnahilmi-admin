@@ -9,12 +9,12 @@
     <div class="body">
   
       <div class="form-edit" >
-        <form [formGroup]="formPrewedding">
+        <form [formGroup]="formPrewedding" (ngSubmit)="onConfirmEdit()">
   
           <div class="image-input">
             <div *ngIf="!changeImage; else preview">
               <label class="no-image">
-                <img src="assets/images/no-image.png" alt="img-input">
+                <img src="{{API_URL + data.image}}" alt="img-input">
                 <input type="file" (change)="onChangeImage($event)">
                 <mat-icon>photo_camera</mat-icon>
               </label>
@@ -22,7 +22,6 @@
             <ng-template #preview>
               <label class="image">
                 <img src="{{previewImage}}" alt="img-input">
-                <!-- <input type="file" (change)="onChangeImage($event)"> -->
                 <mat-icon (click)="onBackImage()">refresh</mat-icon>
               </label>
             </ng-template>
@@ -36,8 +35,8 @@
           <mat-form-field appearance="fill">
             <mat-label>Status</mat-label>
             <mat-select formControlName="status">
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
+              <mat-option value="show">Tampikan</mat-option>
+              <mat-option value="hide">Sembunyikan</mat-option>
             </mat-select>
           </mat-form-field>
   
