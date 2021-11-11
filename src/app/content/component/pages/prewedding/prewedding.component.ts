@@ -100,7 +100,9 @@ export class PreweddingComponent implements OnInit {
         )
         dialogOpenDelete.afterClosed().subscribe((results) => {
           if (results) {
-
+            this.preweddingService.deletePrewedding(results).subscribe((res: any) => {
+              this.getListPrewedding();
+            })
           }
         })
         break;

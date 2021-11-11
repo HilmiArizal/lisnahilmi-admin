@@ -42,4 +42,10 @@ export class PreweddingService {
     )
   }
 
+  deletePrewedding(dataPrewedding: any) {
+    return this.http.delete(this.API_URL + `prewedding/deletePrewedding/${dataPrewedding._id}`).pipe(
+      tap((res) => console.log(res))
+    )
+  }
+
 }
