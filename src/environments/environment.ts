@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   url: {
     local: 'http://localhost:8000/api/',
-    server: 'https://lisnahilmi.herokuapp.com/',
-    image: 'http://localhost:8000/'
+    server: 'https://lisnahilmi.herokuapp.com/api/',
+    image: 'https://lisnahilmi.herokuapp.com/',
   }
 };
 

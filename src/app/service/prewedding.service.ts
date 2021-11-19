@@ -12,7 +12,7 @@ export class PreweddingService {
   public API_URL: any = '';
 
   constructor(private http: HttpClient) {
-    this.API_URL = environment.url.local;
+    this.API_URL = environment.url.server;
   }
 
   getListPrewedding(dataPrewedding: any) {
