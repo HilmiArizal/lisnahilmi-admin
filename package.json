@@ -1,5 +1,5 @@
 {
-  "name": "lisnahilmi-admin",
+  "name": "lisnahilmi-api",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
