@@ -21,18 +21,24 @@ export class ReservationComponent implements OnInit {
 
   public totalPresent: any;
   public totalNotPresent: any;
+  public session1: any;
+  public session2: any;
+  public session3: any;
 
   selectedFriend: string = '';
 
   constructor(
     private reservationService: ReservationService,
     private dialog: MatDialog
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.getListWish();
     this.getPresent();
     this.getNotPresent();
+    this.getSession1();
+    this.getSession2();
+    this.getSession3();
   }
 
   async getListWish() {
@@ -88,7 +94,7 @@ export class ReservationComponent implements OnInit {
     }
   }
 
-  onDeleteWish(dataWish: any){
+  onDeleteWish(dataWish: any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = dataWish;
     dialogConfig.disableClose = true;
@@ -98,7 +104,7 @@ export class ReservationComponent implements OnInit {
       dialogConfig
     )
     dialogOpen.afterClosed().subscribe((results) => {
-      if(results){
+      if (results) {
         this.reservationService.deleteReservation(results).subscribe((res: any) => {
           this.getListWish();
           alert(`Wish dari ${results.name} berhasil di hapus`)
@@ -118,6 +124,32 @@ export class ReservationComponent implements OnInit {
     let dataReservation = { reservation: "batal" };
     await this.reservationService.getReservation(dataReservation).subscribe((res: any) => {
       this.totalNotPresent = res.dataWish.length;
+    })
+  }
+
+  async getSession1() {
+    let dataSession = { session: 1 };
+    await this.reservationService.getSession(dataSession).subscribe((res: any) => {
+      this.session1 = res.dataWish.length;
+      console.log(this.session1);
+    })
+  }
+
+  async getSession2() {
+    let dataSession = { session: 2 };
+    await this.reservationService.getSession(dataSession).subscribe((res: any) => {
+      this.session2 = res.dataWish.length;
+      console.log(this.session2);
+
+    })
+  }
+
+  async getSession3() {
+    let dataSession = { session: 3 };
+    await this.reservationService.getSession(dataSession).subscribe((res: any) => {
+      this.session3 = res.dataWish.length;
+      console.log(this.session3);
+
     })
   }
 

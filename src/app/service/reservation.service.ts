@@ -36,4 +36,10 @@ export class ReservationService {
     )
   }
 
+  getSession(dataWish: any) {
+    return this.http.post(this.API_URL + `wish/getSession`, dataWish).pipe(
+      tap((res) => console.log(res))
+    )
+  }
+
 }
