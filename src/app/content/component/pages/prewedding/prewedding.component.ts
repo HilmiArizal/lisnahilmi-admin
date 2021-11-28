@@ -65,7 +65,7 @@ export class PreweddingComponent implements OnInit {
     dialogConfig.disableClose = true;
     switch (type) {
       case 'add':
-        dialogConfig.width = "50vw";
+        dialogConfig.minWidth = "50vw";
         const dialogOpenAdd = this.dialog.open(
           AddComponent,
           dialogConfig
@@ -79,7 +79,7 @@ export class PreweddingComponent implements OnInit {
         })
         break;
       case 'edit':
-        dialogConfig.width = "50vw";
+        dialogConfig.minWidth = "50vw";
         const dialogOpenEdit = this.dialog.open(
           EditComponent,
           dialogConfig
@@ -93,7 +93,7 @@ export class PreweddingComponent implements OnInit {
         })
         break;
       case 'delete':
-        dialogConfig.width = "30vw";
+        dialogConfig.minWidth = "30vw";
         const dialogOpenDelete = this.dialog.open(
           DeletePrewedding,
           dialogConfig

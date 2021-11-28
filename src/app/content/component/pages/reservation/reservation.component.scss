@@ -1,58 +1,79 @@
-.reservation{
-    .title{
-        font-size: 24px;
-        font-weight: 500;
-        margin-bottom: 20px;
+.reservation {
+  .title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .body {
+
+    .mat-form-field {
+      width: 100%;
+      font-size: 14px;
     }
 
-    .body{
+    .table-responsive {
+      box-shadow: none;
+      border: 0.5px solid rgba(0, 0, 0, .12);
+      overflow: scroll !important;
 
-        .mat-form-field{
-            width: 100%;
-            font-size: 14px;
-        }
+      table {
+          max-width: 100%;
+          overflow: scroll;
+        width: 100%;
 
-        .mat-elevation-z8{
-            box-shadow: none;
-            border: 0.5px solid rgba(0,0,0,.12);
-            table{
-                width: 100%;
+            tr.mat-header-row {
+                background-color: #AA857D;
                 
-
-                tr.mat-header-row{
-                    background-color: #AA857D;
-                    th{
-                        font-size: 15px;
-                    }
-                    th:nth-child(1){
-                        width: 20%;
-                    }
-                    th:nth-child(2){
-                        width: 5%;
-                    }
-                    th:nth-child(3){
-                        width: 50%;
-                    }
-                    
+                th {
+                    font-size: 15px;
                 }
-                .icon{
-                    .mat-icon{
-                        cursor: pointer;
-                        color: #AA857D;
-                        transition: 0.3s ease;
-                    }
-                    .mat-icon:hover{
-                        opacity: 0.8;
-                    }
+                
+                th:nth-child(1) {
+                    width: 20%;
                 }
+                
+                th:nth-child(2) {
+                    width: 5%;
+                }
+                
+                th:nth-child(3) {
+                    width: 50%;
+                }
+                
             }
         }
 
-        .reservation{
-            margin-top: 20px;
-            .all{
-                font-size: 24px;
-            }
+        .icon {
+          .mat-icon {
+            cursor: pointer;
+            color: #AA857D;
+            transition: 0.3s ease;
+          }
+
+          .mat-icon:hover {
+            opacity: 0.8;
+          }
         }
+      }
+
     }
+
+    .reservation {
+      margin-top: 20px;
+
+      .all {
+        font-size: 24px;
+      }
+    }
+  }
+
+@media (max-width: 700px){
+.reservation {
+
+
+    .table-responsive{
+        width: 200%;
+    }
+}
 }

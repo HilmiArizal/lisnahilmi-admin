@@ -98,7 +98,7 @@ export class ReservationComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = dataWish;
     dialogConfig.disableClose = true;
-    dialogConfig.width = "30vw";
+    dialogConfig.minWidth = "30vw";
     const dialogOpen = this.dialog.open(
       DeleteComponent,
       dialogConfig

@@ -9,7 +9,8 @@
       <input matInput placeholder="Ex. Hilmi" #input (keyup)="getSearchListWish($event)">
     </mat-form-field>
 
-    <div class="mat-elevation-z8">
+    <div class="mat-elevation-z8 table-responsive">
+
       <table mat-table [dataSource]="dataSource">
 
         <ng-container matColumnDef="name">
@@ -39,7 +40,7 @@
 
         <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Action </th>
-          <td mat-cell *matCellDef="let element"> 
+          <td mat-cell *matCellDef="let element">
             <div class="icon" style="text-align: center;">
               <mat-icon (click)="onDeleteWish(element)">delete</mat-icon>
             </div>
@@ -50,19 +51,20 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
-      <mat-paginator [pageSize]="pagePerPage" [pageIndex]="pageCurrentPage" [length]="pageTotalData" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons (page)="getPageListWish($event)">
+      <mat-paginator [pageSize]="pagePerPage" [pageIndex]="pageCurrentPage" [length]="pageTotalData"
+        [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons (page)="getPageListWish($event)">
       </mat-paginator>
     </div>
 
     <div class="reservation">
-        <div class="all"> Total input: {{pageTotalData}}</div>
-        <div class="present">Hadir: {{totalPresent}}</div>
-        <div class="not-present">Berhalangan: {{totalNotPresent}}</div>
+      <div class="all"> Total input: {{pageTotalData}}</div>
+      <div class="present">Hadir: {{totalPresent}}</div>
+      <div class="not-present">Berhalangan: {{totalNotPresent}}</div>
 
-        <hr/>
-        <div class="session1">Sesi 1: {{session1}}</div>
-        <div class="session2">Sesi 2: {{session2}}</div>
-        <div class="session3">Sesi 3: {{session3}}</div>
+      <hr />
+      <div class="session1">Sesi 1: {{session1}}</div>
+      <div class="session2">Sesi 2: {{session2}}</div>
+      <div class="session3">Sesi 3: {{session3}}</div>
 
     </div>
 
